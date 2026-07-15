@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Delete PDF Pages · Toolkit Pro Hub</title>
+  <meta name="description" content="Delete individual PDF pages or page ranges privately in your browser.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+    <span>Free PDF tools · Private by design</span>
+  </nav>
+
+  <main class="workspace">
+    <header class="head">
+      <span class="tag">FREE · PRIVATE · PAGE RANGES</span>
+      <h1>🗑️ Delete PDF Pages</h1>
+      <p>Select a PDF and enter the pages or ranges that should be removed.</p>
+    </header>
+
+    <section class="panel">
+      <div class="drop" id="deleteDrop">
+        <div>
+          <div class="big">☁</div>
+          <strong>Drop one PDF here</strong>
+          <p>or choose a PDF from your device</p>
+          <button class="btn" id="chooseDeletePdf" type="button">Choose PDF</button>
+        </div>
+      </div>
+
+      <input id="deletePdfInput" type="file" accept="application/pdf,.pdf" hidden>
+      <div class="files" id="deleteFileBox"></div>
+      <p class="page-count" id="deletePageCount"></p>
+
+      <div class="options single-wide">
+        <label>
+          Pages to delete
+          <input id="deletePages" type="text" value="1" placeholder="Example: 1,3-5,9">
+        </label>
+      </div>
+
+      <div class="option-help">
+        Enter single pages and ranges separated by commas.<br>
+        Examples: <code>1</code>, <code>2-5</code>, or <code>1,3-5,9</code>.
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="deletePagesButton" type="button" disabled>Delete pages &amp; download</button>
+        <button class="btn alt" id="clearDeletePdf" type="button">Clear</button>
+      </div>
+
+      <p class="note" id="deleteStatus">Your PDF never leaves your device.</p>
+    </section>
+  </main>
+
+  <footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="js/delete-pages.js"></script>
+</body>
+</html>

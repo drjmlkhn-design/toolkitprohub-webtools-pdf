@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Compress Image · Toolkit Pro Hub</title>
+  <meta name="description" content="Compress images with target KB, preview, quality controls, and a compression percentage bar.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+  <span>Free image tools · Private by design</span>
+</nav>
+
+<main class="crop-workspace">
+  <header class="head">
+    <span class="tag">TARGET KB · PREVIEW · COMPRESSION BAR</span>
+    <h1>🗜 Compress Image</h1>
+    <p>Choose a target size or quality, preview the result, and see the compression percentage.</p>
+  </header>
+
+  <section class="crop-panel">
+    <div class="crop-toolbar">
+      <button class="btn" id="chooseCompressImage" type="button">Choose image</button>
+      <label>Target KB <input id="compressTargetKb" type="number" min="1" value="200"></label>
+      <label>Max quality % <input id="compressQuality" type="number" min="10" max="100" value="85"></label>
+      <label>Format
+        <select id="compressFormat">
+          <option value="image/jpeg">JPG</option>
+          <option value="image/webp">WEBP</option>
+        </select>
+      </label>
+    </div>
+
+    <input id="compressImageInput" type="file" accept="image/*" hidden>
+
+    <div class="preview-box">
+      <div class="preview-pane"><h3>Original</h3><img id="compressOriginalPreview" alt="Original preview"></div>
+      <div class="preview-pane"><h3>Compressed preview</h3><img id="compressOutputPreview" alt="Compressed preview"></div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric"><b>Original size</b><span id="compressOriginalSize">—</span></div>
+      <div class="metric"><b>Compressed size</b><span id="compressOutputSize">—</span></div>
+      <div class="metric"><b>Reduction</b><span id="compressReduction">—</span></div>
+    </div>
+
+    <div class="crop-actions">
+      <button class="btn secondary" id="previewCompress" type="button" disabled>Compress & preview</button>
+      <button class="btn" id="downloadCompress" type="button" disabled>Download compressed image</button>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-bar" id="compressProgress"></div></div>
+      <div class="progress-text" id="compressStatus">Choose an image to begin.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+<script src="js/compress-advanced.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rotate & Reorder PDF · Toolkit Pro Hub</title>
+  <meta name="description" content="Preview PDF pages, rotate individual pages, and drag pages to reorder them.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+  <span>Free PDF tools · Private by design</span>
+</nav>
+
+<main class="crop-workspace">
+  <header class="head">
+    <span class="tag">PREVIEW · ROTATE · DRAG TO REORDER</span>
+    <h1>↻ Rotate PDF</h1>
+    <p>Preview every page, rotate individual pages, and drag pages up or down to change the final order.</p>
+  </header>
+
+  <section class="crop-panel">
+    <div class="crop-toolbar">
+      <button class="btn" id="chooseRotatePdf" type="button">Choose PDF</button>
+      <button class="btn secondary" id="rotateAllLeft" type="button" disabled>Rotate all left</button>
+      <button class="btn secondary" id="rotateAllRight" type="button" disabled>Rotate all right</button>
+    </div>
+
+    <input id="rotatePdfInput" type="file" accept="application/pdf,.pdf" hidden>
+
+    <div class="advanced-grid" id="rotatePagesGrid"></div>
+
+    <div class="crop-actions">
+      <button class="btn" id="saveRotatedPdf" type="button" disabled>Save rotated PDF</button>
+      <button class="btn danger" id="clearRotatePdf" type="button">Clear</button>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-bar" id="rotateProgress"></div></div>
+      <div class="progress-text" id="rotateStatus">Choose a PDF to preview its pages.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  if (window.pdfjsLib) {
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+</script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="js/rotate-preview.js"></script>
+</body>
+</html>

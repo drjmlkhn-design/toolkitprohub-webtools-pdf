@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Merge PDF · Toolkit Pro Hub</title>
+  <meta name="description" content="Merge PDFs online and drag files to change their merge order. Files stay on your device.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+    <span>Free PDF tools · Private by design</span>
+  </nav>
+
+  <main class="workspace">
+    <header class="head">
+      <span class="tag">FREE · PRIVATE · DRAG TO REORDER</span>
+      <h1>📚 Merge PDF</h1>
+      <p>Select multiple PDFs, drag them into the required order, and merge them into one document.</p>
+    </header>
+
+    <section class="panel">
+      <div class="drop" id="pdfDrop">
+        <div>
+          <div class="big">☁</div>
+          <strong>Drop PDF files here</strong>
+          <p>or choose multiple PDFs from your device</p>
+          <button class="btn" id="choosePdfs" type="button">Choose PDFs</button>
+        </div>
+      </div>
+
+      <input id="pdfInput" type="file" accept="application/pdf,.pdf" multiple hidden>
+
+      <div class="pdf-sortable-grid" id="pdfSortableGrid"></div>
+      <p class="sort-help" id="pdfSortHelp" hidden>Drag PDF cards to change the merge order.</p>
+
+      <div class="actions">
+        <button class="btn" id="mergePdfs" type="button" hidden>Merge PDFs</button>
+        <button class="btn alt" id="clearPdfs" type="button">Clear</button>
+      </div>
+
+      <p class="note" id="mergeStatus">Your PDFs never leave your device.</p>
+    </section>
+  </main>
+
+  <footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="js/merge-pdf.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Crop PDF · Toolkit Pro Hub</title>
+  <meta name="description" content="Crop PDF pages online with a live page preview and adjustable crop box. Files stay on your device.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+    <span>Free PDF tools · Private by design</span>
+  </nav>
+
+  <main class="crop-workspace">
+    <header class="head">
+      <span class="tag">FREE · PRIVATE · LIVE PREVIEW</span>
+      <h1>▣ Crop PDF</h1>
+      <p>Choose a PDF, preview a page, drag the crop box, and apply it to the current page or all pages.</p>
+    </header>
+
+    <section class="crop-panel">
+      <div class="crop-toolbar">
+        <button class="btn" id="choosePdf" type="button">Choose PDF</button>
+
+        <label>
+          Preview page
+          <select id="pdfPageSelect" disabled>
+            <option value="">Select PDF first</option>
+          </select>
+        </label>
+
+        <label>
+          Apply crop to
+          <select id="pdfApplyMode" disabled>
+            <option value="all">All pages</option>
+            <option value="current">Current page only</option>
+          </select>
+        </label>
+      </div>
+
+      <input id="pdfInput" type="file" accept="application/pdf,.pdf" hidden>
+
+      <div class="crop-preview-shell" id="pdfDropArea">
+        <div class="crop-empty" id="pdfEmpty">
+          <div class="big">📄</div>
+          <strong>Click here or use “Choose PDF”</strong>
+          <p>Select a PDF to preview and crop its pages.</p>
+        </div>
+        <img id="pdfPagePreview" alt="PDF page crop preview" hidden>
+      </div>
+
+      <p class="crop-file-name" id="pdfFileName"></p>
+
+      <div class="crop-info" id="pdfCropInfo" hidden>
+        <div><b>Left</b><span id="pdfCropLeft">0%</span></div>
+        <div><b>Top</b><span id="pdfCropTop">0%</span></div>
+        <div><b>Width</b><span id="pdfCropWidth">100%</span></div>
+        <div><b>Height</b><span id="pdfCropHeight">100%</span></div>
+      </div>
+
+      <div class="crop-actions">
+        <button class="btn secondary" id="resetPdfCrop" type="button" disabled>Reset crop</button>
+        <button class="btn" id="downloadCroppedPdf" type="button" disabled>Crop &amp; download PDF</button>
+      </div>
+
+      <p class="crop-status" id="pdfStatus">Your PDF never leaves your device.</p>
+    </section>
+  </main>
+
+  <footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+  </script>
+  <script src="js/crop-pdf.js"></script>
+</body>
+</html>

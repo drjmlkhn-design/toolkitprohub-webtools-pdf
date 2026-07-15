@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Crop Image · Toolkit Pro Hub</title>
+  <meta name="description" content="Crop images online with a live drag-and-resize preview. Files stay on your device.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+    <span>Free image tools · Private by design</span>
+  </nav>
+
+  <main class="crop-workspace">
+    <header class="head">
+      <span class="tag">FREE · PRIVATE · LIVE PREVIEW</span>
+      <h1>✂ Crop Image</h1>
+      <p>Choose an image, drag and resize the crop box, then download the exact selected area.</p>
+    </header>
+
+    <section class="crop-panel">
+      <div class="crop-toolbar">
+        <button class="btn" id="chooseImage" type="button">Choose image</button>
+
+        <label>
+          Aspect ratio
+          <select id="imageRatio">
+            <option value="free">Free</option>
+            <option value="1">1 : 1</option>
+            <option value="1.3333333333">4 : 3</option>
+            <option value="1.7777777778">16 : 9</option>
+            <option value="1.5">3 : 2</option>
+          </select>
+        </label>
+
+        <label>
+          Output
+          <select id="imageFormat">
+            <option value="image/jpeg">JPG</option>
+            <option value="image/png">PNG</option>
+            <option value="image/webp">WEBP</option>
+          </select>
+        </label>
+      </div>
+
+      <input id="imageInput" type="file" accept="image/*" hidden>
+
+      <div class="crop-preview-shell" id="imagePreviewShell">
+        <div class="crop-empty" id="imageEmpty">
+          <div class="big">🖼️</div>
+          <strong>Select an image to start cropping</strong>
+          <p>Everything is processed locally in your browser.</p>
+        </div>
+        <img id="cropImagePreview" alt="Crop preview" hidden>
+      </div>
+
+      <p class="crop-file-name" id="imageFileName"></p>
+
+      <div class="crop-info" id="imageCropInfo" hidden>
+        <div><b>X</b><span id="cropX">0</span></div>
+        <div><b>Y</b><span id="cropY">0</span></div>
+        <div><b>Width</b><span id="cropWidth">0</span></div>
+        <div><b>Height</b><span id="cropHeight">0</span></div>
+      </div>
+
+      <div class="crop-actions">
+        <button class="btn secondary" id="rotateLeft" type="button" disabled>↺ Rotate left</button>
+        <button class="btn secondary" id="rotateRight" type="button" disabled>↻ Rotate right</button>
+        <button class="btn secondary" id="resetImageCrop" type="button" disabled>Reset</button>
+        <button class="btn" id="downloadCroppedImage" type="button" disabled>Crop &amp; download</button>
+      </div>
+
+      <p class="crop-status" id="imageStatus">Your image never leaves your device.</p>
+    </section>
+  </main>
+
+  <footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+  <script src="js/crop-image.js"></script>
+</body>
+</html>

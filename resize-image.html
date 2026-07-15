@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resize Image · Toolkit Pro Hub</title>
+  <meta name="description" content="Resize images by pixels, quality, and optional target KB with preview.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+  <span>Free image tools · Private by design</span>
+</nav>
+
+<main class="crop-workspace">
+  <header class="head">
+    <span class="tag">PIXELS · QUALITY · TARGET KB · PREVIEW</span>
+    <h1>⤢ Resize Image</h1>
+    <p>Choose pixel dimensions, output quality, and an optional target file size in KB.</p>
+  </header>
+
+  <section class="crop-panel">
+    <div class="crop-toolbar">
+      <button class="btn" id="chooseResizeImage" type="button">Choose image</button>
+      <label>Width px <input id="resizeWidth" type="number" min="1" value="1200"></label>
+      <label>Height px <input id="resizeHeight" type="number" min="1" placeholder="Auto"></label>
+      <label class="inline-check"><input id="keepAspect" type="checkbox" checked> Keep aspect ratio</label>
+      <label>Quality %
+        <input id="resizeQuality" type="number" min="10" max="100" value="90">
+      </label>
+      <label>Target KB
+        <input id="resizeTargetKb" type="number" min="1" placeholder="Optional">
+      </label>
+      <label>Format
+        <select id="resizeFormat">
+          <option value="image/jpeg">JPG</option>
+          <option value="image/webp">WEBP</option>
+          <option value="image/png">PNG</option>
+        </select>
+      </label>
+    </div>
+
+    <input id="resizeImageInput" type="file" accept="image/*" hidden>
+
+    <div class="preview-box">
+      <div class="preview-pane"><h3>Original</h3><img id="resizeOriginalPreview" alt="Original preview"></div>
+      <div class="preview-pane"><h3>Output preview</h3><img id="resizeOutputPreview" alt="Output preview"></div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric"><b>Original size</b><span id="resizeOriginalSize">—</span></div>
+      <div class="metric"><b>Output size</b><span id="resizeOutputSize">—</span></div>
+      <div class="metric"><b>Dimensions</b><span id="resizeDimensions">—</span></div>
+    </div>
+
+    <div class="crop-actions">
+      <button class="btn secondary" id="previewResize" type="button" disabled>Update preview</button>
+      <button class="btn" id="downloadResize" type="button" disabled>Download resized image</button>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-bar" id="resizeProgress"></div></div>
+      <div class="progress-text" id="resizeStatus">Choose an image to begin.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+<script src="js/resize-advanced.js"></script>
+</body>
+</html>

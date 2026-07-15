@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PDF to Image · Toolkit Pro Hub</title>
+  <meta name="description" content="Convert a selected PDF page range to PNG or JPG images.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+  <span>Free PDF tools · Private by design</span>
+</nav>
+
+<main class="workspace">
+  <header class="head">
+    <span class="tag">FREE · PRIVATE · PAGE RANGE</span>
+    <h1>▧ PDF to Image</h1>
+    <p>Select a PDF, choose a From–To range, and convert only those pages.</p>
+  </header>
+
+  <section class="panel">
+    <div class="drop" id="pdfImageDrop">
+      <div>
+        <div class="big">☁</div>
+        <strong>Drop one PDF here</strong>
+        <p>or choose a PDF from your device</p>
+        <button class="btn" id="choosePdfImage" type="button">Choose PDF</button>
+      </div>
+    </div>
+
+    <input id="pdfImageInput" type="file" accept="application/pdf,.pdf" hidden>
+    <div class="files" id="pdfImageFile"></div>
+    <p class="page-count" id="pdfImagePageCount"></p>
+
+    <div class="range-row">
+      <label>From page <input id="pdfImageFrom" type="number" min="1" value="1"></label>
+      <label>To page <input id="pdfImageTo" type="number" min="1" value="1"></label>
+      <label>Format
+        <select id="pdfImageFormat">
+          <option value="image/png">PNG</option>
+          <option value="image/jpeg">JPG</option>
+        </select>
+      </label>
+      <label>Scale
+        <select id="pdfImageScale">
+          <option value="1.2">Standard</option>
+          <option value="1.7" selected>High</option>
+          <option value="2.3">Very high</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="convertPdfImages" type="button" disabled>Convert selected range</button>
+      <button class="btn alt" id="clearPdfImage" type="button">Clear</button>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-bar" id="pdfImageProgress"></div></div>
+      <div class="progress-text" id="pdfImageStatus">Your PDF never leaves your device.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  if (window.pdfjsLib) {
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+</script>
+<script src="js/pdf-to-image-advanced.js"></script>
+</body>
+</html>

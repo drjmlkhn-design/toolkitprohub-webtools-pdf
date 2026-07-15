@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reorder PDF Pages · Toolkit Pro Hub</title>
+  <meta name="description" content="Reorder PDF pages using page numbers and page ranges privately in your browser.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+    <span>Free PDF tools · Private by design</span>
+  </nav>
+
+  <main class="workspace">
+    <header class="head">
+      <span class="tag">FREE · PRIVATE · CUSTOM PAGE ORDER</span>
+      <h1>↕️ Reorder PDF Pages</h1>
+      <p>Select a PDF and enter the exact new page order. Ranges are supported.</p>
+    </header>
+
+    <section class="panel">
+      <div class="drop" id="reorderDrop">
+        <div>
+          <div class="big">☁</div>
+          <strong>Drop one PDF here</strong>
+          <p>or choose a PDF from your device</p>
+          <button class="btn" id="chooseReorderPdf" type="button">Choose PDF</button>
+        </div>
+      </div>
+
+      <input id="reorderPdfInput" type="file" accept="application/pdf,.pdf" hidden>
+      <div class="files" id="reorderFileBox"></div>
+      <p class="page-count" id="reorderPageCount"></p>
+
+      <div class="options single-wide">
+        <label>
+          New page order
+          <input id="pageOrder" type="text" value="1" placeholder="Example: 3,1,2,4-7">
+        </label>
+      </div>
+
+      <div class="option-help">
+        The entered order becomes the final PDF order.<br>
+        Examples: <code>3,1,2</code> or <code>5-8,1-4</code>.<br>
+        A descending range is also allowed: <code>5-1</code>.
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="reorderPagesButton" type="button" disabled>Reorder &amp; download</button>
+        <button class="btn alt" id="clearReorderPdf" type="button">Clear</button>
+      </div>
+
+      <p class="note" id="reorderStatus">Your PDF never leaves your device.</p>
+    </section>
+  </main>
+
+  <footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="js/reorder-pages.js"></script>
+</body>
+</html>

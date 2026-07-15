@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Image to PDF · Toolkit Pro Hub</title>
+  <meta name="description" content="Create a PDF from images and drag images to change their page order.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><b>T</b>Toolkit Pro Hub</a>
+    <span>Free image tools · Private by design</span>
+  </nav>
+
+  <main class="workspace">
+    <header class="head">
+      <span class="tag">FREE · PRIVATE · DRAG TO REORDER</span>
+      <h1>🖼️ Image to PDF</h1>
+      <p>Select multiple images, drag them into the required order, and create one PDF.</p>
+    </header>
+
+    <section class="panel">
+      <div class="drop" id="imageDrop">
+        <div>
+          <div class="big">☁</div>
+          <strong>Drop images here</strong>
+          <p>or choose multiple images from your device</p>
+          <button class="btn" id="chooseImages" type="button">Choose images</button>
+        </div>
+      </div>
+
+      <input id="imageInput" type="file" accept="image/*" multiple hidden>
+
+      <div class="sortable-grid" id="sortableGrid"></div>
+      <p class="sort-help" id="sortHelp" hidden>Drag image cards to change the PDF page order.</p>
+
+      <div class="actions">
+        <button class="btn" id="createPdf" type="button" hidden>Create PDF</button>
+        <button class="btn alt" id="clearImages" type="button">Clear</button>
+      </div>
+
+      <p class="note" id="imagePdfStatus">Your images never leave your device.</p>
+    </section>
+  </main>
+
+  <footer class="foot">Toolkit Pro Hub · Files stay on your device.</footer>
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="js/image-to-pdf.js"></script>
+</body>
+</html>
